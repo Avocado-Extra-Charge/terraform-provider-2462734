@@ -143,17 +143,14 @@ jobs:
           echo '# Module Attributes' >> output/documentation.md
           ./terraform-docs markdown table \
             --output-file "$(pwd)"/output/documentation.md \
-            --sort-by required \
-            'src/${{ matrix.directory }}'
+            --sort-by required
 
       - name: Bundle up Terraform module
-        working-directory: src/${{ matrix.directory }}
         run: zip -vr ../../output/terraform-module.zip *
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: '${{ matrix.directory }}'
           path: output
           retention-days: 5
 
