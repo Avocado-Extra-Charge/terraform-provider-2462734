@@ -39,12 +39,25 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md)
 ### Everything below this line is generated via [terraform-docs]
 ___
 <!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.0, < 2.0.0 |
+
+## Providers
+
+No providers.
+
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_make_exciting"></a> [make\_exciting](#module\_make\_exciting) | ./modules/make_exciting | n/a |
 | <a name="module_say_hello"></a> [say\_hello](#module\_say\_hello) | ./modules/say_hello | n/a |
+
+## Resources
+
+No resources.
 
 ## Inputs
 

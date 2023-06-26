@@ -23,7 +23,7 @@ func TestSayHelloRequiresInput(t *testing.T) {
 
 func TestSayHello(t *testing.T) {
 
-	var name string = "DontShaveTheYak"
+	var name string = "TestUser"
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		TerraformDir: "../modules/say_hello",
