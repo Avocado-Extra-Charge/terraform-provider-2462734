@@ -15,7 +15,8 @@ jobs:
     name: 'Detect pull request context'
     outputs:
       directories: ${{ steps.condense.outputs.result }}
-      release-type: ${{ steps.check_pr_label.outputs.release-type}}
+      release-type: ${{ steps.release-labels.outputs.labels }}
+      change-type: ${{ steps.change-labels.outputs.labels }}
       is-merge-event: >-
         ${{ github.event_name == 'pull_request_target'
          && github.event.action == 'closed'
@@ -23,9 +24,6 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
-    outputs:
-      release-type: ${{ steps.release-labels.outputs.labels }}
-      change-type: ${{ steps.change-labels.outputs.labels }}
     steps:
       - uses: mheap/github-action-required-labels@v5
         name: Has release type label
