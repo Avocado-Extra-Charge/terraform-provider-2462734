@@ -6,16 +6,17 @@ on:
 
 jobs:
   label:
-    name: Check Labels
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
-      - name: Has semver label
-        uses: jesusvasquez333/verify-pr-label-action@v1.4.0
+      - uses: mheap/github-action-required-labels@v5
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          valid-labels: 'major, minor, patch, no-release'
-          pull-request-number: ${{ github.event.pull_request.number }}
-          disable-reviews: true
+          mode: exactly
+          count: 1
+          labels: "semver:patch, semver:minor, semver:major, no-release"
+          add_comment: true
 
       - name: Has change type label
         uses: jesusvasquez333/verify-pr-label-action@v1.4.0
