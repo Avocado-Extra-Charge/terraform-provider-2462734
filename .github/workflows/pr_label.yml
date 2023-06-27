@@ -161,7 +161,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Comment on PR'
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           path: outputs
       - name: Display structure of downloaded files
