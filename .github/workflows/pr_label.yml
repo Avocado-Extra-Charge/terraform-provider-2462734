@@ -140,9 +140,7 @@ jobs:
           path: src
       - name: Render terraform docs
         run: |
-          ./terraform-docs markdown table \
-            --output-file "$(pwd)"/output/documentation.md \
-            --sort-by required
+          ./terraform-docs .
       - name: Bundle up Terraform module
         run: zip -vr ../../output/terraform-module.zip *
 
