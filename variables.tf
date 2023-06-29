@@ -1,5 +1,9 @@
-variable "name" {
+variable "hello" {
+  type = string
+  description = "welcome string"
+}
+
+variable "some_key" {
   type        = string
-  default     = "World"
-  description = "The name of a person or thing to say hello to."
+  description = "this is a some key"
 }

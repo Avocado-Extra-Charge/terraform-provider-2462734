@@ -1,40 +1,6 @@
-## About The Project
+## terr-module-poc
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
-This "Hello World" module is a template and a guide to creating Terraform modules. Its purpose is to demonstrate Terraform module best practices and provide a template with CI/CD preconfigured.
-
-### Features
-* Local testing with [pre-commit-terraform].
-    - Formats code with `terraform fmt`.
-    - Validates code with `terraform validate`.
-    - Automatic `README` updates with [terraform-docs].
-    - Static code analysis with [TFLint], [tfsec] and [checkov].
-* [Devcontainer](https://code.visualstudio.com/docs/remote/containers) with dependencies pre-configured.
-* CI pipeline with Github Actions:
-    * Reuses Devcontainer to run the same checks that run locally.
-    * Runs tests against the latest Terraform version.
-    * Runs tests against older versions of Terraform.
-* CD pipeline with Github Actions:
-    * Create git tags using [semver](https://semver.org/) when PRs merge to the `main` branch.
-    * Create [Github Releases](https://github.com/DontShaveTheYak/terraform-module-template/releases) for every tag.
-* Testing with [Terratest] across all major versions of Terraform.
-* Shows use of module composition by combining smaller modules
-* Shows how to use "Higher-order modules" to [extend module functionality](./modules/greet_multiple/).
-
-## Getting Started
-
-## Usage
-If you are creating a brand new module then using this template is pretty straight forward by using the GitHub [guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-If you are wanting to apply this template to an existing module then you will want to do the following:
-1. Copy the [.devcontainer](.devcontainer) and [.github](.github) directories.
-2. Update your README file/files to include the [template value](https://terraform-docs.io/user-guide/configuration/output/) where you want the auto generated content from [terraform-docs] to go.
-
-Regardless if you created a new module or updated an existing one, you will want to modify this entire README to be about YOUR module. Also update the [CONTRIBUTING.md](./CONTRIBUTING.md) file with steps on how to contribute to YOUR module. The [LICENSE](./LICENSE) file is optional if you are NOT publishing to the [Terraform module registry](https://registry.terraform.io/).
-## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md)
-
+Running Terraform modules
 
 ### Everything below this line is generated via [terraform-docs]
 ___
@@ -43,31 +9,36 @@ ___
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.0, < 2.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.0.1 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_random"></a> [random](#provider\_random) | 3.5.1 |
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_say_hello"></a> [say\_hello](#module\_say\_hello) | ./modules/say_hello | n/a |
+No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [random_pet.server](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | The name of a person or thing to say hello to. | `string` | `"World"` | no |
+| <a name="input_hello"></a> [hello](#input\_hello) | welcome string | `string` | n/a | yes |
+| <a name="input_some_key"></a> [some\_key](#input\_some\_key) | this is a some key | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_greeting"></a> [greeting](#output\_greeting) | A very exciting greeting! |
+| <a name="output_pet"></a> [pet](#output\_pet) | first random pet ID |
+| <a name="output_quoted_some_key"></a> [quoted\_some\_key](#output\_quoted\_some\_key) | escaped quoted value of some\_key |
 <!-- END_TF_DOCS -->

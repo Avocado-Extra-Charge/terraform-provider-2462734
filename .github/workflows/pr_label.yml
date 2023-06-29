@@ -140,11 +140,9 @@ jobs:
           path: src
       - name: Render terraform docs
         run: |
-          echo '# Module Attributes' >> output/documentation.md
           ./terraform-docs markdown table \
             --output-file "$(pwd)"/output/documentation.md \
             --sort-by required
-
       - name: Bundle up Terraform module
         run: zip -vr ../../output/terraform-module.zip *
 

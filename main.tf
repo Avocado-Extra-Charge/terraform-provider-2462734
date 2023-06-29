@@ -1,8 +1,6 @@
-
-
-module "say_hello" {
-  source = "./modules/say_hello"
-
-  name = var.name
-
+resource "random_pet" "server" {
+  keepers = {
+    hello      = var.hello
+    secret_key = var.some_key
+  }
 }
