@@ -141,8 +141,8 @@ jobs:
       - name: Render terraform docs
         run: |
           ./terraform-docs .
-      - name: Bundle up Terraform module
-        run: zip -vr ../../output/terraform-module.zip *
+      # - name: Bundle up Terraform module
+      #   run: zip -vr ../../output/terraform-module.zip *
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v3
